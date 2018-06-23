@@ -19,8 +19,6 @@ import java.util.List;
 @RequestMapping("/readingList")
 public class ReadingListController {
 
-    private String associateId;
-
     private ReadingListRepository readingListRepository;
 
     //不建议这里使用Autowired，建议用构造器注入
