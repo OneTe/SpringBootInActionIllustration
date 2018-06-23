@@ -1,0 +1,42 @@
+#YAML Shortcomings
+#YAML files cannot be loaded by using the @PropertySource annotation. So,
+#in the case that you need to load values that way, you need to use a properties file.
+server:
+  port: 8000
+
+spring:
+  security:
+    user:
+      name: wangcheng
+      password: 123
+
+#当前激活环境类型
+  profiles:
+    active: development
+
+#日志配置
+logging:
+  level:
+    root: INFO
+---
+spring:
+  profiles: development
+logging:
+  level:
+    root: DEBUG
+---
+spring:
+  profiles: production
+logging:
+  path: /tmp/
+  file: BookWorm.log
+  level:
+    root: WARN
+
+
+
+
+#Spring Boot的属性解析器非常智能，它会自动把驼峰规则的属性和使用连字符或下划线的同名属性关联起来
+#也可以使用associate_id或associate-id
+amazon:
+  associateId: iso112habuma
