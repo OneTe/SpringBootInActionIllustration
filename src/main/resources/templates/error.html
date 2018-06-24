@@ -1,0 +1,28 @@
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Oops!</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <!--
+    Spring Boot会为错误视图提供如下属性：
+    timestamp:错误发生的时间。
+    status:HTTP状态码。
+    error:错误的原因。
+    exception:异常的类名。
+    message:异常消息，如果这个错误是由异常引起的。
+    errors:BindingResult异常里的各种错误，如果这个错误是由异常引起的。
+    trace:异常跟踪信息，如果这个错误是由异常引起的。
+    path:错误发生时，请求的url路径
+    -->
+</head>
+<div class="errorPage">
+    <span class="oops">Oops!</span><br/>
+    <!--错误图片需要放在src/main/resources/static或src/main/resources/public-->
+    <img th:src="@{/MissingPage.png}">
+    <p>There seems to be a problem with the page you requested
+<!--这里应该是idea的一个bug，可能是找不到springBoot默认生成的path等等-->
+        (<span th:text="${path}"></span>).</p>
+    <p th:text="${'Details: ' + message}"></p>
+</div>
+</html>
