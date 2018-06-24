@@ -35,8 +35,8 @@ logging:
 
 
 
-
+#写到这里找不到。。。，还是写到application.properties中
 #Spring Boot的属性解析器非常智能，它会自动把驼峰规则的属性和使用连字符或下划线的同名属性关联起来
 #也可以使用associate_id或associate-id
-amazon:
-  associateId: iso112habuma
+#amazon:
+#  associateId: iso112habuma
